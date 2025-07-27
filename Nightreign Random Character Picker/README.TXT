@@ -1,0 +1,1 @@
+Simple character randomizer, can generate for up to 3 players but does not allow for multiples of same character
