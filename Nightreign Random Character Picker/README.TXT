@@ -1,1 +1,5 @@
-Simple character randomizer, can generate for up to 3 players but does not allow for multiples of same character
+Two random pickers
+
+one a very simple which takes an input from 1-3 and randomly picks a character with dupe protection.
+
+The second allows for duplicates if the user wants
