@@ -110,11 +110,33 @@ sote_ranged_weapon_list = [
     ]
 
 def main():
-    
-    soul_level = input("Do you want this to be an SL1 run? ")
-    class_type = input("melee, ranged, caster, or any: ")
-    region_lock = input("Region lock? yes, no, any: ")
-    sote = input("Shadows of the Erdtree? yes, no, nosote, or any: ")
+    while True:
+        try:
+            soul_level = input("Do you want this to be an SL1 run? (yes/no/any): ").strip().lower()
+            if soul_level not in ["yes", "no", "any"]:
+                raise ValueError("Invalid input for soul level. Please enter 'yes', 'no', or 'any'.")
+        except ValueError as e:
+            print(e)
+        try:
+            class_type = input("melee, ranged, caster, or any: ").strip().lower()
+            if class_type not in ["melee", "ranged", "caster", "any"]:
+                raise ValueError("Invalid input for class type. Please enter 'melee', 'ranged', 'caster', or 'any'.")
+        except ValueError as e:
+            print(e)
+        try:
+            region_lock = input("Region lock? yes, no, any: ").strip().lower()
+            if region_lock not in ["yes", "no", "any"]:
+                raise ValueError("Invalid input for region lock. Please enter 'yes', 'no', or 'any'.")
+        except ValueError as e:
+            print(e)
+        try:
+            sote = input("Shadows of the Erdtree? yes, no, nosote, or any: ").strip().lower()
+            if sote not in ["yes", "no", "nosote", "any"]:
+                raise ValueError("Invalid input for Shadows of the Erdtree. Please enter 'yes', 'no', 'nosote', or 'any'.")
+        except ValueError as e:
+            print(e)
+        else:
+            break
     
     soul_level_cap = is_sl1(soul_level).decode('utf-8', 'ignore')
     character_class = get_class_type(class_type)
