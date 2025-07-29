@@ -112,8 +112,8 @@ sote_ranged_weapon_list = [
 def main():
     
     soul_level = input("Do you want this to be an SL1 run? ")
-    class_type = input("melee, ranged, caster, or any? ")
-    region_lock = input("Region lock? yes, no, random: ")
+    class_type = input("melee, ranged, caster, or any: ")
+    region_lock = input("Region lock? yes, no, any: ")
     sote = input("Shadows of the Erdtree? yes, no, nosote, or any: ")
     
     soul_level_cap = is_sl1(soul_level).decode('utf-8', 'ignore')
