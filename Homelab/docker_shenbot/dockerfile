@@ -1,0 +1,14 @@
+FROM python:3.11-slim
+WORKDIR /shenbot/
+COPY shenbot-discord/ .
+RUN pip install discord.py aiohttp
+RUN pip install beautifulsoup4
+RUN pip install requests
+RUN pip install lxml
+RUN pip install dotenv
+
+# Set environment variables (replace with your actual values) Preferably use a secret vault for better security
+#ENV bot_token="..."
+#ENV channel_id="..."
+
+CMD ["python", "shen_bot.py"]
